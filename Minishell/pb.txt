@@ -1,0 +1,3 @@
+segfault quand ya multi pipe
+ne prends pas les arguments
+ne gere pas quand ca ecrit mal les fichier et les redirections
