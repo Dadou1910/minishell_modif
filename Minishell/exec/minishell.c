@@ -70,7 +70,7 @@ void print_command(t_command *cmd)
     else
         printf("Table is NULL.\n");
 }
-
+/*
 int main(int argc, char **argv, char **envp)
 {
     char *line;
@@ -98,7 +98,7 @@ int main(int argc, char **argv, char **envp)
         // (void)cmd;
         // if (line[0] != '\0')
         // {
-        cmd = fill_t_command(line);
+        cmd = fill_t_command(line, envp);
         printf("\nBefore printing command, args[0]: %s\n\n", cmd->args[0]);
         print_command(cmd);
         if (!cmd)
@@ -113,3 +113,4 @@ int main(int argc, char **argv, char **envp)
     }
     return 0;
 }
+*/

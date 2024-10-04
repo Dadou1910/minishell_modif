@@ -56,19 +56,20 @@ typedef struct
 // =========================================================================
 
 void    initialize_t_command(t_command *cmd);
+void    initialize_t_main(t_table *table, char **envp);
 int     open_fct_check(char *file, int i);
 void    free_t_command(t_command *cmd);
 void    new_t_command(t_command *cmd);
 void    add_line_to_history(const char *line);
-t_command   *tokenize_input(char *input);
-t_command   *fill_t_command(char *input);
+t_command   *tokenize_input(char *input, char **envp);
+t_command   *fill_t_command(char *input, char **envp);
 
 // Expand
 
 
 t_command   *parse_pipeline_commands(char **tokens);
-
-void print_command(t_command *cmd);
+char        *get_prompt();
+void        print_command(t_command *cmd);
 
 // =========================================================================
 //                                EXECUTION

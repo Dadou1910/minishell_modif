@@ -97,11 +97,11 @@ void    change_args_for_exec(t_command *cmd)
 
 
 
-t_command   *fill_t_command(char *input)
+t_command   *fill_t_command(char *input, char **envp)
 {
     (void)input;
     t_command   *cmd;
-    cmd = tokenize_input(input);
+    cmd = tokenize_input(input, envp);
     if (!cmd)
         return (NULL);
     if (find_fd_in(cmd))

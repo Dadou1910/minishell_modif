@@ -69,11 +69,12 @@ void process_tokens(char **tokens, t_command *cmd, int *j)
     cmd->args[i] = NULL;
 }
 
-t_command *tokenize_input(char *input)
+t_command *tokenize_input(char *input, char **envp)
 {
     char        **tokens;
     t_command   *cmd;
     t_command   *head;
+    t_table     *table;
     int j = 0;
 
     if (!input)
@@ -84,7 +85,14 @@ t_command *tokenize_input(char *input)
         perror("Error allocating memory");
         return NULL;
     }
+    table = malloc(sizeof(t_table));
+    if (!table)
+    {
+        perror("Error allocating memory");
+        return NULL;
+    }
     initialize_t_command(cmd);
+    initialize_t_main(table, envp);
     head = cmd;
     tokens = ft_split(input, ' ');
     while (tokens[j])
